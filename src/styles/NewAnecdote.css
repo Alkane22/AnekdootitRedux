@@ -1,0 +1,32 @@
+.anForm {
+    border: 2px solid darkgreen;
+    background-color: lightgreen;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.anForm h2{
+    background-color: green;
+    margin: 0px 0px 10px 0px;
+    text-shadow: 1px 1px 1px black;
+}
+
+.anForm input{
+    border: 1px solid darkgreen;
+    margin-bottom: 5px;
+    height: 2em;
+    width: 90%;
+}
+
+.anForm button{
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: white;
+    background-color: green;
+    border: 1px solid darkgreen;
+}
+
+.anForm button:hover{
+    box-shadow: 1px 1px 1px black;
+}

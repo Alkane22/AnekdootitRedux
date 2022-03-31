@@ -5,6 +5,11 @@ import { Provider } from 'react-redux'
 import App from './App'
 import reducer from './reducers/anecdoteReducer'
 
+//Styles
+import './styles/Anecdote.css'
+import './styles/NewAnecdote.css'
+import './styles/General.css'
+
 const store = createStore(reducer)
 
 ReactDOM.render(
