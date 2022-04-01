@@ -1,6 +1,6 @@
 const filterReducer = (state = 'NONE', action) => {
-    console.log('state now: ', state)
-    console.log('action', action)
+    //console.log('state now: ', state)
+    //console.log('action', action)
 
     switch(action.type){
         case 'SET_FILTER':
@@ -11,14 +11,6 @@ const filterReducer = (state = 'NONE', action) => {
 }
 
 export const filterChange = filter => {
-    /*
-    if(filter ===  ''){
-        return{
-            type: 'NONE',
-            filter: ''
-        }
-    }
-    */
     return{
         type: 'SET_FILTER',
         filter

@@ -1,13 +1,30 @@
+import { useSelector, useDispatch } from "react-redux"
+import { closeNotification } from "../reducers/notificationReducer"
+
 const Notification = () => {
-  const style = {
-    border: 'solid',
-    padding: 10,
-    borderWidth: 1
+  const notification = useSelector(state => state.notification)
+  const dispatch = useDispatch()
+
+  if(notification.type === 'ON'){
+    setTimeout(() => {
+      dispatch(closeNotification())
+    }, 4000)
+
+    return (
+      <div className="notification">
+        {notification.message}
+      </div>
+    )
   }
-  return (
-    <div style={style}>
-      render here notification...
-    </div>
+
+  if(notification.type === 'OFF'){
+    return(
+      <></>
+    )
+  }
+
+  return(
+    <></>
   )
 }
 

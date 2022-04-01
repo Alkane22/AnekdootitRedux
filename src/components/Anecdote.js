@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { voteDote } from '../reducers/anecdoteReducer'
+import { updateNotification } from '../reducers/notificationReducer'
 
 const Anecdote = ({ anecdote, handleClick }) => {
     return (
@@ -25,18 +26,24 @@ const Anecdotes = () => {
         
     })
     
+    const multiAction = (anecdote) => {
+        dispatch(voteDote(anecdote.id))
+        dispatch(updateNotification('You voted "' + anecdote.content + '"'))
+    }
 
     return (
         <div className='container'>
             <h2>Anecdotes</h2>
             <ul>
                 {anecdotes
-                    .sort((a, b) => b.votes - a.votes)
+                    .slice() //anecdotes is read only so shallow copy is created
+                    .sort((a, b) => b.votes - a.votes) //sort bt votes
                     .map(anecdote =>
                         <li key={anecdote.id}>
                             <Anecdote                  
                                 anecdote={anecdote}
-                                handleClick={() => dispatch(voteDote(anecdote.id))}
+
+                                handleClick={() => multiAction(anecdote)}
                             />
                         </li>
 
