@@ -13,7 +13,8 @@
 }
 
 .anForm input{
-    border: 1px solid darkgreen;
+    border: 2px solid darkgreen;
+    border-radius: 4px;
     margin-bottom: 5px;
     height: 2em;
     width: 90%;

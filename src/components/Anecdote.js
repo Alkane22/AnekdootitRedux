@@ -12,8 +12,19 @@ const Anecdote = ({ anecdote, handleClick }) => {
 }
 
 const Anecdotes = () => {
-    const anecdotes = useSelector(state => state)
     const dispatch = useDispatch()
+    //const anecdotes = useSelector(state => state.anecdotes)
+    
+    const anecdotes = useSelector(state => {
+        if(state.filter === 'NONE'){
+            return state.anecdotes
+        }
+        return state.filter === 'SET_FILTER'
+        ? state.anecdotes
+        : state.anecdotes.filter(anecdote => anecdote.content.toLowerCase().includes(state.filter.toLowerCase()))
+        
+    })
+    
 
     return (
         <div className='container'>
