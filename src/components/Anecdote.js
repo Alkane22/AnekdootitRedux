@@ -42,7 +42,6 @@ const Anecdotes = () => {
                         <li key={anecdote.id}>
                             <Anecdote                  
                                 anecdote={anecdote}
-
                                 handleClick={() => multiAction(anecdote)}
                             />
                         </li>
